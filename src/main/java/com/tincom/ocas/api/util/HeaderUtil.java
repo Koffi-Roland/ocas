@@ -18,8 +18,8 @@ public final class HeaderUtil {
 
     public static HttpHeaders createAlert(String message, String param) {
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-humantreeApp-alert", message);
-        headers.add("X-humantreeApp-params", param);
+        headers.add("X-ocasApp-alert", message);
+        headers.add("X-osasApp-params", param);
         return headers;
     }
 
@@ -38,8 +38,8 @@ public final class HeaderUtil {
     public static HttpHeaders createFailureAlert(String entityName, String errorKey, String defaultMessage) {
         log.error("Entity processing failed, {}", defaultMessage);
         HttpHeaders headers = new HttpHeaders();
-        headers.add("X-humantreeApp-error", "error." + errorKey);
-        headers.add("X-humantreeApp-params", entityName);
+        headers.add("X-ocasApp-error", "error." + errorKey);
+        headers.add("X-ocasApp-params", entityName);
         return headers;
     }
 }
